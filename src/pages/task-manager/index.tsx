@@ -1,39 +1,11 @@
 "use client";
-import { useState, useEffect } from "react";
-import Layout from "@/app/layout";
-
-type Task = {
-  title: string;
-  description: string;
-  deadline: Date;
-  is_done: boolean;
-};
+import TaskList from "@/components/task-manager/TaskList";
 
 const TaskManager = () => {
-  const [task, setTask] = useState<Task[]>([]);
-
-  async function getLocal() {
-    const res = await fetch("http://localhost:8000/api/tasks");
-    const data = await res.json();
-    console.log(data.data);
-    setTask(data.data);
-  }
-
-  useEffect(() => {
-    getLocal();
-  }, []);
-
   return (
-      <main className="bg-black">
-        <div className="bg-red-500">
-          {task.map((tasks) => (
-            <div>{tasks.title}</div>
-          ))}
-        </div>
-        <div className="">
-          <span>Task 2.0</span>
-        </div>
-      </main>
+    <main className="flex h-screen  items-center justify-between p-24">
+      <TaskList />
+    </main>
   );
 };
 
