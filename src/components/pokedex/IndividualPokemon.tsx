@@ -1,4 +1,5 @@
 import React from "react";
+import "/Users/delarosadn/Desktop/code.nosync/pokedex/src/app/globals.css"
 
 // type  = {}
 

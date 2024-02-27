@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-import Layout from "@/app/layout";
 
 type Task = {
   title: string;
